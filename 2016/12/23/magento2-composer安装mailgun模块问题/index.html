@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>magento2 composer 安装 mailgun 模块 | 利维亚坦</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="magento2的开发中需要用到发信功能,出于性能考虑,最终选择使用 mailgun 的服务来实现发信功能。首先去搜索下github有没有相关的开源程序。很快找到了 Magento 2 Mailgun Module 。
+按照说明很简单，只需要 composer require 就可以了。只是这次比较特殊的是需要用户名和密码。之前没遇到过记录下相关操作。
+账户名和密码
+刚开始一直以为是 magent">
+<meta property="og:type" content="article">
+<meta property="og:title" content="magento2 composer 安装 mailgun 模块">
+<meta property="og:url" content="http://yoursite.com/2016/12/23/magento2-composer安装mailgun模块问题/index.html">
+<meta property="og:site_name" content="利维亚坦">
+<meta property="og:description" content="magento2的开发中需要用到发信功能,出于性能考虑,最终选择使用 mailgun 的服务来实现发信功能。首先去搜索下github有没有相关的开源程序。很快找到了 Magento 2 Mailgun Module 。
+按照说明很简单，只需要 composer require 就可以了。只是这次比较特殊的是需要用户名和密码。之前没遇到过记录下相关操作。
+账户名和密码
+刚开始一直以为是 magent">
+<meta property="og:image" content="http://yoursite.com/img/16/12/magento-account.png">
+<meta property="og:image" content="http://yoursite.com/img/16/12/magento-generate-key.png">
+<meta property="og:image" content="http://yoursite.com/img/16/12/magento-key-list.png">
+<meta property="og:updated_time" content="2016-12-23T08:11:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="magento2 composer 安装 mailgun 模块">
+<meta name="twitter:description" content="magento2的开发中需要用到发信功能,出于性能考虑,最终选择使用 mailgun 的服务来实现发信功能。首先去搜索下github有没有相关的开源程序。很快找到了 Magento 2 Mailgun Module 。
+按照说明很简单，只需要 composer require 就可以了。只是这次比较特殊的是需要用户名和密码。之前没遇到过记录下相关操作。
+账户名和密码
+刚开始一直以为是 magent">
+<meta name="twitter:image" content="http://yoursite.com/img/16/12/magento-account.png">
+  
+    <link rel="alternate" href="/atom.xml" title="利维亚坦" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">利维亚坦</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-magento2-composer安装mailgun模块问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/23/magento2-composer安装mailgun模块问题/" class="article-date">
+  <time datetime="2016-12-23T07:43:17.000Z" itemprop="datePublished">2016-12-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      magento2 composer 安装 mailgun 模块
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>magento2的开发中需要用到发信功能,出于性能考虑,最终选择使用 mailgun 的服务来实现发信功能。首先去搜索下github有没有相关的开源程序。很快找到了 <a href="https://github.com/Bogardo/Mailgun-Magento2" target="_blank" rel="external">Magento 2 Mailgun Module</a> 。</p>
+<p>按照说明很简单，只需要 <code>composer</code> require 就可以了。只是这次比较特殊的是需要用户名和密码。之前没遇到过记录下相关操作。</p>
+<h2 id="账户名和密码"><a href="#账户名和密码" class="headerlink" title="账户名和密码"></a>账户名和密码</h2><hr>
+<p>刚开始一直以为是 magento2 官网注册账户和密码。输入账户名密码一直不正确。这里的账户和密码是 connect 的 public key 、 private key。</p>
+<p>访问 <a href="https://www.magentocommerce.com/magento-connect/" target="_blank" rel="external">https://www.magentocommerce.com/magento-connect/</a> 登录账户。进入我的账户(<b>My Account</b>)。<br>点击 <code>Connect</code> 标签。</p>
+<p><img src="/img/16/12/magento-account.png" alt="magento account"></p>
+<p>输入 key 的名称，点击 <b>Generate Key</b> 生成一个 key 。</p>
+<p><img src="/img/16/12/magento-generate-key.png" alt="magento account"><br>提交成功之后，public key 就是用户名，private key 就是密码。</p>
+<p><img src="/img/16/12/magento-key-list.png" alt="magento account"></p>
+<h2 id="设置composer，自动登录"><a href="#设置composer，自动登录" class="headerlink" title="设置composer，自动登录"></a>设置composer，自动登录</h2><p>有了账户名和密码，没次输入很麻烦的。可以设置 <code>auth.json</code> 文件让 composer 自动登录。</p>
+<p>用文本编辑器打开 <code>~/.composer/auth.json</code> 文件。参照以下格式配置。</p>
+<pre><code>{
+    &quot;bitbucket-oauth&quot;: {},
+    &quot;github-oauth&quot;: {},
+    &quot;gitlab-oauth&quot;: {},
+    &quot;http-basic&quot;: {
+        &quot;repo.magento.com&quot;: {
+            &quot;username&quot;:&quot;&lt;public key&gt;&quot;,
+            &quot;password&quot;:&quot;&lt;private key&gt;&quot;
+        }
+    }
+}
+</code></pre><p>保存成功之后就不用每次都去输入一长串的用户和密码了。<br>最后，执行 <code>composer require bogardo/mailgun-magento2</code> 命令自动安装成功。也不用每次输入密码了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/23/magento2-composer安装mailgun模块问题/" data-id="cix1irbzh0000o1a5dvcl6z7g" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/composer/">composer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/magento2/">magento2</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/23/配置ssh key登录github/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">配置ssh key登录github</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/composer/">composer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/magento2/">magento2</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/composer/" style="font-size: 10px;">composer</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/magento2/" style="font-size: 10px;">magento2</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/12/23/magento2-composer安装mailgun模块问题/">magento2 composer 安装 mailgun 模块</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/23/配置ssh key登录github/">配置ssh key登录github</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/23/信息架构笔记/">信息架构笔记[测试]</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 gavin liu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="/js/jquery-1.12.4.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
