@@ -61,6 +61,67 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-magento2-composer安装mailgun模块问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/23/magento2-composer安装mailgun模块问题/" class="article-date">
+  <time datetime="2016-12-23T07:43:17.000Z" itemprop="datePublished">2016-12-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/23/magento2-composer安装mailgun模块问题/">magento2 composer 安装 mailgun 模块</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>magento2的开发中需要用到发信功能,出于性能考虑,最终选择使用 mailgun 的服务来实现发信功能。首先去搜索下github有没有相关的开源程序。很快找到了 <a href="https://github.com/Bogardo/Mailgun-Magento2" target="_blank" rel="external">Magento 2 Mailgun Module</a> 。</p>
+<p>按照说明很简单，只需要 <code>composer</code> require 就可以了。只是这次比较特殊的是需要用户名和密码。之前没遇到过记录下相关操作。</p>
+<h2 id="账户名和密码"><a href="#账户名和密码" class="headerlink" title="账户名和密码"></a>账户名和密码</h2><hr>
+<p>刚开始一直以为是 magento2 官网注册账户和密码。输入账户名密码一直不正确。这里的账户和密码是 connect 的 public key 、 private key。</p>
+<p>访问 <a href="https://www.magentocommerce.com/magento-connect/" target="_blank" rel="external">https://www.magentocommerce.com/magento-connect/</a> 登录账户。进入我的账户(<b>My Account</b>)。<br>点击 <code>Connect</code> 标签。</p>
+<p><img src="/img/16/12/magento-account.png" alt="magento account"></p>
+<p>输入 key 的名称，点击 <b>Generate Key</b> 生成一个 key 。</p>
+<p><img src="/img/16/12/magento-generate-key.png" alt="magento account"><br>提交成功之后，public key 就是用户名，private key 就是密码。</p>
+<p><img src="/img/16/12/magento-key-list.png" alt="magento account"></p>
+<h2 id="设置composer，自动登录"><a href="#设置composer，自动登录" class="headerlink" title="设置composer，自动登录"></a>设置composer，自动登录</h2><p>有了账户名和密码，没次输入很麻烦的。可以设置 <code>auth.json</code> 文件让 composer 自动登录。</p>
+<p>用文本编辑器打开 <code>~/.composer/auth.json</code> 文件。参照以下格式配置。</p>
+<pre><code>{
+    &quot;bitbucket-oauth&quot;: {},
+    &quot;github-oauth&quot;: {},
+    &quot;gitlab-oauth&quot;: {},
+    &quot;http-basic&quot;: {
+        &quot;repo.magento.com&quot;: {
+            &quot;username&quot;:&quot;&lt;public key&gt;&quot;,
+            &quot;password&quot;:&quot;&lt;private key&gt;&quot;
+        }
+    }
+}
+</code></pre><p>保存成功之后就不用每次都去输入一长串的用户和密码了。<br>最后，执行 <code>composer require bogardo/mailgun-magento2</code> 命令自动安装成功。也不用每次输入密码了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/23/magento2-composer安装mailgun模块问题/" data-id="cix1irbzh0000o1a5dvcl6z7g" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/composer/">composer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/magento2/">magento2</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-配置ssh key登录github" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/12/23/配置ssh key登录github/" class="article-date">
@@ -97,17 +158,29 @@
 <p>执行以下命令添加<code>ssh key</code>到到 <code>ssh-agent</code> 中。</p>
 <pre><code>$ ssh-add ~/.ssh/id_rsa_work
 </code></pre><p>这里，<code>id_rsa_work</code>就是上面自定义的证书名词。</p>
-<h2 id="部署到-github-上"><a href="#部署到-github-上" class="headerlink" title="部署到 github 上"></a>部署到 github 上</h2><ol>
+<h2 id="配置ssh"><a href="#配置ssh" class="headerlink" title="配置ssh"></a>配置ssh</h2><p>打开 <code>~/.ssh/config</code> 文件(如果没有则创建一个)。编辑配置文件，使得能够自动识别该用哪个证书。注意缩进</p>
+<pre><code>Host work
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa
+
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_person
+</code></pre><h2 id="部署到-github-上"><a href="#部署到-github-上" class="headerlink" title="部署到 github 上"></a>部署到 github 上</h2><ol>
 <li>点击顶部的 <b>Setting</b> 链接。<br> <img src="/img/16/12/account.png" alt="account link"></li>
 <li>在账户左边的侧边,点击 <b>SSH and GPG keys</b><br> <img src="/img/16/12/sidebar.png" alt="sidebar link"></li>
 <li>点击 <b>New SSH key</b>.这里别点错了。<br> <img src="/img/16/12/add-ssh-key.png" alt="sidebar link"></li>
 <li>给 SSH KEY 取个名字.然后,复制文件 <code>id_rsa_work.pub</code> 的内容到输入框，点击<code>add ssh key</code>保存就好了。</li>
 </ol>
-
+<h2 id="添加源"><a href="#添加源" class="headerlink" title="添加源"></a>添加源</h2><p>最后添加源就可以了。</p>
+<pre><code>git remote add origin git@github.com:gavin9517/gavin9517.github.com.git
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/23/配置ssh key登录github/" data-id="cix1cd7js0000g5a5v6zg13pw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/12/23/配置ssh key登录github/" data-id="cix1irc0z0006o1a5kgl6cr6n" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
@@ -146,7 +219,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/23/信息架构笔记/" data-id="cix195d9r0001vya5ioa0tzg4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/12/23/信息架构笔记/" data-id="cix1irbzm0001o1a5wjr3hzlz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -168,7 +241,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/composer/">composer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/magento2/">magento2</a></li></ul>
     </div>
   </div>
 
@@ -178,7 +251,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a>
+      <a href="/tags/composer/" style="font-size: 10px;">composer</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/magento2/" style="font-size: 10px;">magento2</a>
     </div>
   </div>
 
@@ -198,6 +271,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/12/23/magento2-composer安装mailgun模块问题/">magento2 composer 安装 mailgun 模块</a>
+          </li>
         
           <li>
             <a href="/2016/12/23/配置ssh key登录github/">配置ssh key登录github</a>
