@@ -63,6 +63,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-magento2在phtml文件中获取主题的URL地址" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/15/magento2在phtml文件中获取主题的URL地址/" class="article-date">
+  <time datetime="2017-02-15T12:06:41.000Z" itemprop="datePublished">2017-02-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/15/magento2在phtml文件中获取主题的URL地址/">magento2在phtml文件中获取主题的URL地址</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>首先把需要获取URL的图片放在主题的目录下，例如: <code>/app/design/frontend/&lt;Vendor&gt;/&lt;Theme&gt;/web/images/</code>。<br>然后在phtml文件中通过block的<code>getViewFileUrl</code>方法来获取URL地址。参考以下代码。</p>
+<pre><code>&lt;?php 
+echo $block-&gt;getViewFileUrl(&apos;images/my-picture.jpg&apos;);
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/15/magento2在phtml文件中获取主题的URL地址/" data-id="ciz81wjxq00019ba5sgyubaeq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-css中font-smoothing属性用法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/02/04/css中font-smoothing属性用法/" class="article-date">
@@ -92,7 +131,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/04/css中font-smoothing属性用法/" data-id="ciyqybv8y00004qa5vd35til6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/02/04/css中font-smoothing属性用法/" data-id="ciz81wjxm00009ba5wtq36xtq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -133,7 +172,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/11/有意思的小知识-费茨法则/" data-id="ciyqybvag00074qa5rnzj2j7m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/01/11/有意思的小知识-费茨法则/" data-id="ciz81wjyc00089ba5gkwia30k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/交互设计/">交互设计</a></li></ul>
@@ -194,7 +233,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/23/magento2-composer安装mailgun模块问题/" data-id="ciyqybv9500024qa5lifk0eor" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/12/23/magento2-composer安装mailgun模块问题/" data-id="ciz81wjxu00039ba53uo787i2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/composer/">composer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/magento2/">magento2</a></li></ul>
@@ -264,7 +303,7 @@ Host github.com
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/23/配置ssh key登录github/" data-id="ciyqybvah00084qa51nyj65lo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/12/23/配置ssh key登录github/" data-id="ciz81wjyg000a9ba5wwkhyh1f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
@@ -303,7 +342,7 @@ Host github.com
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/23/信息架构笔记/" data-id="ciyqybv9300014qa5rqyipidf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/12/23/信息架构笔记/" data-id="ciz81wjxs00029ba54j1xf0z6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -357,6 +396,10 @@ Host github.com
       <ul>
         
           <li>
+            <a href="/2017/02/15/magento2在phtml文件中获取主题的URL地址/">magento2在phtml文件中获取主题的URL地址</a>
+          </li>
+        
+          <li>
             <a href="/2017/02/04/css中font-smoothing属性用法/">css中font smoothing属性用法</a>
           </li>
         
@@ -370,10 +413,6 @@ Host github.com
         
           <li>
             <a href="/2016/12/23/配置ssh key登录github/">配置ssh key登录github</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/23/信息架构笔记/">信息架构笔记[测试]</a>
           </li>
         
       </ul>

@@ -3,14 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016/12 | 利维亚坦</title>
+  <title>magento2在phtml文件中获取主题的URL地址 | 利维亚坦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="利维亚坦">
-<meta property="og:url" content="http://yoursite.com/archives/2016/12/index.html">
+  <meta name="description" content="首先把需要获取URL的图片放在主题的目录下，例如: /app/design/frontend/&amp;lt;Vendor&amp;gt;/&amp;lt;Theme&amp;gt;/web/images/。然后在phtml文件中通过block的getViewFileUrl方法来获取URL地址。参考以下代码。
+&amp;lt;?php 
+echo $block-&amp;gt;getViewFileUrl(&amp;apos;images/my-pic">
+<meta property="og:type" content="article">
+<meta property="og:title" content="magento2在phtml文件中获取主题的URL地址">
+<meta property="og:url" content="http://yoursite.com/2017/02/15/magento2在phtml文件中获取主题的URL地址/index.html">
 <meta property="og:site_name" content="利维亚坦">
+<meta property="og:description" content="首先把需要获取URL的图片放在主题的目录下，例如: /app/design/frontend/&amp;lt;Vendor&amp;gt;/&amp;lt;Theme&amp;gt;/web/images/。然后在phtml文件中通过block的getViewFileUrl方法来获取URL地址。参考以下代码。
+&amp;lt;?php 
+echo $block-&amp;gt;getViewFileUrl(&amp;apos;images/my-pic">
+<meta property="og:updated_time" content="2017-02-16T07:13:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="利维亚坦">
+<meta name="twitter:title" content="magento2在phtml文件中获取主题的URL地址">
+<meta name="twitter:description" content="首先把需要获取URL的图片放在主题的目录下，例如: /app/design/frontend/&amp;lt;Vendor&amp;gt;/&amp;lt;Theme&amp;gt;/web/images/。然后在phtml文件中通过block的getViewFileUrl方法来获取URL地址。参考以下代码。
+&amp;lt;?php 
+echo $block-&amp;gt;getViewFileUrl(&amp;apos;images/my-pic">
   
     <link rel="alternate" href="/atom.xml" title="利维亚坦" type="application/atom+xml">
   
@@ -61,77 +71,54 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/12/23/magento2-composer安装mailgun模块问题/" class="archive-article-date">
-  <time datetime="2016-12-23T07:43:17.000Z" itemprop="datePublished">Dec 23</time>
+        <section id="main"><article id="post-magento2在phtml文件中获取主题的URL地址" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/15/magento2在phtml文件中获取主题的URL地址/" class="article-date">
+  <time datetime="2017-02-15T12:06:41.000Z" itemprop="datePublished">2017-02-15</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/23/magento2-composer安装mailgun模块问题/">magento2 composer 安装 mailgun 模块</a>
+    <h1 class="article-title" itemprop="name">
+      magento2在phtml文件中获取主题的URL地址
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/12/23/配置ssh key登录github/" class="archive-article-date">
-  <time datetime="2016-12-23T03:06:50.000Z" itemprop="datePublished">Dec 23</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/23/配置ssh key登录github/">配置ssh key登录github</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/12/23/信息架构笔记/" class="archive-article-date">
-  <time datetime="2016-12-23T01:00:51.000Z" itemprop="datePublished">Dec 23</time>
-</a>
+        <p>首先把需要获取URL的图片放在主题的目录下，例如: <code>/app/design/frontend/&lt;Vendor&gt;/&lt;Theme&gt;/web/images/</code>。<br>然后在phtml文件中通过block的<code>getViewFileUrl</code>方法来获取URL地址。参考以下代码。</p>
+<pre><code>&lt;?php 
+echo $block-&gt;getViewFileUrl(&apos;images/my-picture.jpg&apos;);
+</code></pre>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/23/信息架构笔记/">信息架构笔记[测试]</a>
-    </h1>
-  
-
-    </header>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/15/magento2在phtml文件中获取主题的URL地址/" data-id="ciz81wjxq00019ba5sgyubaeq" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/02/04/css中font-smoothing属性用法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">css中font smoothing属性用法</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
